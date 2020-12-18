@@ -18,6 +18,13 @@
       height: 3%; 
       background-color: #34495e;
     }
+    div.ex1 {
+  background-color: black;
+  width: 510px;
+  height: 220px;
+  overflow: scroll;
+}
+
   </style>
  </head>
  <body>
@@ -85,7 +92,7 @@
    <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-     <input type="text" id="gsearchsimple" class="form-control input-lg" placeholder="Search..." />
+     <input type="text" id="gsearchsimple" class="form-control input-lg" placeholder="Entrez votre préoccupation..." />
 
      <ul class="list-group">
 

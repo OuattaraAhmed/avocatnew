@@ -95,19 +95,22 @@ if (!empty($_POST)) {
        <div class="row">
        <div class="col-md-4"></div>
          <div class="col-md-4">
+             <br>
+             <br>
+             <br>
                     <form method='POST'>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" name='mail' aria-describedby="emailHelp">
                             
                         </div>
 
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Password</label>
+                            <label for="exampleInputEmail1" class="form-label">Mot de passe</label>
                             <input type="password" class="form-control" id="exampleInputEmail1" name='password' aria-describedby="emailHelp">
                         </div>
 
-                        <button type="submit"  name='submit' class="btn btn-primary">Submit</button>
+                        <button type="submit"  name='submit' class="btn btn-primary">Se connecter</button>
                         </form>
             </div>
             <div class="col-md-4"></div>

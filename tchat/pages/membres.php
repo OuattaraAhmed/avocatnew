@@ -81,6 +81,9 @@ if ($membre->email_avocat_rdv == $_SESSION['email']) {
                     <span><?= $membre->raison ?></span><br/>
                     <a class="select" href="index.php?page=tchat&user=<?= $membre->id_ar ?>"><span class="i-user"></span></a>
                 </div>
+                <div>
+                    <a href="https://meet.jit.si/avocatrapide">Lien de la video conference</a>
+                </div>
 
             <?php
        }
@@ -132,6 +135,10 @@ if ($membre->email == $espec) {
                     <strong><?= $membre->nom ?></strong><br/>
                     <span><?= $membre->email ?></span><br/>
                     <a class="select" href="index.php?page=tchat&user=<?= $membre->id_ar?>"><span class="i-user"></span></a>
+                  
+                </div> 
+                 <div>
+                    <a href="https://meet.jit.si/avocatrapide">Lien de la video conference</a>
                 </div>
 
             <?php          

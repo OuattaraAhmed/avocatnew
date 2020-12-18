@@ -1,4 +1,19 @@
+<?php
+require_once 'bd.php';
 
+if (isset($_POST['submit'])) {
+    $countryName = $_POST['search'];
+
+    $sql = 'SELECT * FROM `avocatrapide` WHERE preocupation = :preocupation';
+    $stmt = $conn->prepare($sql);
+    $stmt->execute(['preocupation' => $countryName]);
+    $row = $stmt->fetch();
+} else {
+    header('location:details.php');
+    exit();
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -25,7 +40,13 @@
             overflow: scroll;
         }
 
-        
+        .text {
+            color: white;
+        }
+
+        .a1 {
+            color: red;
+        }
     </style>
 </head>
 
@@ -86,129 +107,30 @@
         <br>
         <br>
 
-
-        <div class="container">
-
-<div class="row">
-<div class="col-sm-9">
-  <h2>PRENDRE  UN DRV</h2>
-  <form action="" method="POST" id="full_client" >
-
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  
-                  
-                  
-                  <input type="text" name="nom" id="full_nom" class="form-control" placeholder="nom & prenoms">
-
-                </div>
-                <div class="form-group col-md-6">
-                  
-                 
-
-                  <input type="tel" name="tel" id="full_tel" class="form-control" placeholder="numero">
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  
-                 
-                  <input type="email" name="email" id="full_email"class="form-control" placeholder="email">
-                </div>
-                <div class="form-group col-md-6">
-           
-                  
-
-                  <input type="text" name="ville" id="full_ville" class="form-control" placeholder="ville">
+        <div class="container" style="margin-top:30px">
+            <div class="row">
+                <div class="col-sm-9">
+                    <h3 class="a1"><?= $row['preocupation'] ?></h3>
+                    <p class="text"><?= $row['lois']; ?></p>
+                    <br>
                 </div>
 
 
-
-
-              </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  
-                 
-                  <input type="text" name="raison" id="full_raison" class="form-control" placeholder="les raisons">
+                <div class="col-sm-3">
+                    <h3>Votre Avis</h3>
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="indexs.php">Je suis satisfait</a>
+                        </li> <br>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="rdv_tchat.php">Prendre un rendez-vous</a>
+                        </li>
+                    </ul>
+                    <!-- <hr class="d-sm-none"> -->
                 </div>
-                <!-- <div class="form-group col-md-6">
-                  <label for="inputPassword4">Password</label>
-                  <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                </div> -->
-              </div>
-
-
-              
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                   
-                <SELECT name="pays" size="1" class="form-control">
-            <OPTION>Choisir une option          
-            <OPTION>Ivory Coast
-            <OPTION>Ghana
-            <OPTION>togo
-            <OPTION>Benin  
-             <OPTION>afrique du sud
-            </SELECT>
-
-                </div>
-                <div class="form-group col-md-6">
-          
-                <SELECT name="type_rdv" size="1" class="form-control">
-            <OPTION>Choisir une option
-            <OPTION>en ligne (10.000Fr)
-            <OPTION>presentiel (50.000)
-           </SELECT>
-
-
-                </div>
-              </div>
-
-
-
-              <div class="form-group">
-              
-               
-                <textarea name="description" id="full_description" class="form-control" placeholder="Description de votre préoccupation"></textarea>
-              </div>
-             
-              
-         
-              <button type="submit" class=" btn btn-primary" id="mysubmit" name="send" value="send"> Prendre un RDV </button>
-            </form>
-            
-            <div class="col-lg-2 col-md-4 col-6">
-            <img src="img/moov.jpg" class="img-fluid" alt="">
-          </div>
-
-
 
             </div>
-</div>
-          <!-- <center>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-          </center> -->
-
-<div class="col-sm-3"></div>
-</div>
-
-
+        </div>
     </section><!-- End Hero -->
 
     <!-- ======= Footer ======= -->
@@ -282,9 +204,6 @@
     <!-- Vendor JS Files -->
     <script src="assets/js/main.js"></script>
     <!-- ***************************** -->
-    <script src="app.js"></script>
-    <?php include("inc/footer.php") ?>
-<script type="text/javascript" src="js/auth.js"></script>
 
 
 </body>

@@ -246,7 +246,7 @@ a:hover{
   border-radius: 25px;
   outline: none;
   border: none;
-  background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+  background-image:blue;
   background-size: 200%;
   font-size: 1.2rem;
   color: #fff;
@@ -258,6 +258,7 @@ a:hover{
 }
 .btn:hover{
   background-position: right;
+  /* background-color:black; */
 }
 
 
@@ -302,10 +303,10 @@ a:hover{
   </style>
 </head>
 <body>
-    <img class="wave" src="img/wave.png">
+   <!-- <img class="wave" src="img/avocat.jpg"> -->
     <div class="container">
         <div class="img">
-            <img src="img/bg.svg">
+            <img src="img/avocat.jpg">
         </div>
         <div class="login-content">
             <form method="post" id="logForm">

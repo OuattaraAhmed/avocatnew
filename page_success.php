@@ -1,5 +1,5 @@
  <?php include("inc/header.php") ?>
-<body style="background-image:url('img/droit.jpg');">
+<body>
 	<div style="margin: 15%; background-color: white;padding: 5%">
 		<?php 
 		if (isset($_SESSION['pres_code'])) { ?>
